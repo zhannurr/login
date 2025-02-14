@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="style/profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<header>
+    <h1>Your Profile</h1>
+</header>
+<section id="profile-section">
+    <div class="profile-card">
+        <img src="<%= user.avatar %>" alt="Avatar" class="avatar">
+        <h2 id="username">Welcome, <%= user.username %>!</h2>
+        <form action="/update-profile" method="POST" enctype="multipart/form-data">
+            <label for="username">New Username:</label>
+            <input type="text" name="username" id="username" placeholder="Enter new username">
+            
+            <label for="password">New Password:</label>
+            <input type="password" name="password" id="password" placeholder="Enter new password">
+            
+            <label for="avatar">Upload Avatar:</label>
+            <input type="file" name="avatar" id="avatar">
+            
+            <button type="submit">Update Profile</button>
+        </form>
+        <button class="logout-button" onclick="logout()">Logout</button>
+        <button class="delete-button" onclick="deleteProfile()">Delete Profile</button>
+    </div>
+</section>
+<script>
+    function logout() {
+        fetch('/logout', { method: 'POST' }).then(() => {
+            window.location.href = '/login.html';
+        });
+    }
+
+    function deleteProfile() {
+        if (confirm("Are you sure you want to delete your profile? This action cannot be undone!")) {
+            fetch('/delete-profile', { method: 'DELETE' }).then(() => {
+                window.location.href = '/register.html';
+            });
+        }
+    }
+</script>
+</body>
+</html>
