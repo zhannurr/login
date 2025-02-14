@@ -8,7 +8,7 @@ const path = require("path");
 
 const app = express();
 
-mongoose.connect('mongodb+srv://zaksybekzannur7:2oXRNDvP7KCVsTpJ@cluster0.8beaq.mongodb.net/login?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect('ypur mongo uri', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => console.log("MongoDB connected"))
