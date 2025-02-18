@@ -30,7 +30,7 @@ This project is built with **Node.js**, **Express**, **MongoDB**, and **bcrypt**
     npm install
     ```
 
-3. Create the PostgreSQL database and configure the connection in `dashboard.js`.
+3. Create the MongoDb database and configure the connection in `dashboard.js`.
 
 4. Run the application:
     ```bash
@@ -52,19 +52,9 @@ This project is built with **Node.js**, **Express**, **MongoDB**, and **bcrypt**
 
 - **Node.js**: A JavaScript runtime environment for the backend
 - **Express**: Web framework for Node.js
-- **PostgreSQL**: Relational database to store user data
+- **MongoDB**: Database to store user data
 - **bcryptjs**: Secure password hashing
 - **EJS**: Templating engine for dynamic HTML rendering
 - **Validator**: Ensures email validation
 
 ---
-
-## 🌟 Contributing
-
-Feel free to fork and contribute to this project! Open issues and pull requests are welcome.
-
-1. Fork the repository
-2. Create your branch: `git checkout -b feature/your-feature`
-3. Commit your changes: `git commit -m 'Add your feature'`
-4. Push to your branch: `git push origin feature/your-feature`
-5. Create a pull request
